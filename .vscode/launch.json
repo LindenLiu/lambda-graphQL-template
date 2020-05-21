@@ -1,0 +1,40 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Dev Offline",
+      "program": "${workspaceRoot}/node_modules/serverless/bin/serverless",
+      "args": [
+        "offline",
+        "--noTimeout",
+        "--dontPrintOutput",
+        "--stage=dev",
+        "--host=127.0.0.1"
+      ],
+      "sourceMaps": true,
+      "runtimeArgs": [
+        "--lazy"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/.webpack/**/*.js"
+      ],
+      "protocol": "inspector"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach Dev Offline",
+      "sourceMaps": true,
+      "port": 9229,
+      "outFiles": [
+        "${workspaceFolder}/.webpack/**/*.js"
+      ],
+      "protocol": "inspector"
+    }
+  ]
+}
